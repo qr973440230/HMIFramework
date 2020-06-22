@@ -1,4 +1,4 @@
-#include "serialportclient.h"
+﻿#include "serialportclient.h"
 #include <QDebug>
 
 SerialPortClient::SerialPortClient(const QString &portName,
@@ -16,6 +16,9 @@ SerialPortClient::SerialPortClient(const QString &portName,
     m_serialPort = new QSerialPort(this);
     connect(m_serialPort,&QSerialPort::readyRead,this,&::SerialPortClient::readyReadSlot);
     connect(m_serialPort,&QSerialPort::errorOccurred,this,&SerialPortClient::errorOccuredSlot);
+    connect(this,&SerialPortClient::startSignal,this,&SerialPortClient::startSlot);
+    connect(this,&SerialPortClient::stopSignal,this,&SerialPortClient::stopSlot);
+    connect(this,&SerialPortClient::writeSignal,this,&SerialPortClient::writeSlot);
 }
 
 SerialPortClient::SerialPortClient(const QString &portName,

@@ -24,7 +24,7 @@ public:
     explicit UdpClient(const QHostAddress &host,
                quint16 port,
                AbstractQueue<UDPBuffer> *queue,
-               QObject * parent);
+               QObject * parent = nullptr);
 
     void write(const UDPBuffer &buffer);
 

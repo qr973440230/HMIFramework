@@ -42,7 +42,7 @@ private:
     unsigned int m_maxSize;
     bool m_abort;
 
-    QMap<T*,WaitNode<T>> m_map;
+    QMap<T*,WaitNode<T>*> m_map;
     QMutex m_mutex;
     QWaitCondition m_cond;
 };
