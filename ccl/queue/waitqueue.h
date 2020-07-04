@@ -50,8 +50,8 @@ private:
 
 template<typename T>
 WaitQueue<T>::WaitQueue()
-    :m_rIdx(nullptr),
-      m_wIdx(nullptr),
+    :m_wIdx(nullptr),
+      m_rIdx(nullptr),
       m_maxSize(WAIT_DEFAULT_QUEUE_MAX_SIZE),
       m_abort(false)
 {
@@ -76,8 +76,8 @@ WaitQueue<T>::WaitQueue()
 
 template<typename T>
 WaitQueue<T>::WaitQueue(unsigned long maxSize)
-    :m_rIdx(nullptr),
-      m_wIdx(nullptr),
+    :m_wIdx(nullptr),
+      m_rIdx(nullptr),
       m_maxSize(maxSize),
       m_abort(false)
 {
